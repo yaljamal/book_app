@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page </title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/icouns.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Best Book !</h1>
+        <a href="/">Back </a>
+        <div>
+            <h3>Search By </h3>
+        </div>
+    </header>
+    <% books.forEach(val=>{%>
+    <div class="outer-box">
+        <div class="book-box">
+            <img src="<%=val.smallThumbnail%>" id="book-img">
+
+        </div>
+        <h2 id="book-title"><%=val.title%> </h2>
+        <h4 id="book-author"><%=val.authors%> </h4>
+        <p id="book-desc"><%= val.description %></p>
+    </div>
+
+    <% }) %>
+
+</body>
+
+</html>

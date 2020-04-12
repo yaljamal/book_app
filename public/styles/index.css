@@ -1,0 +1,157 @@
+@media (min-width: 768px) {
+    body {
+        background-color: #808080c2;
+        margin: 0px;
+    }
+    header {
+        background-color: rgba(0, 0, 0, 0.9);
+        margin: 0;
+    }
+    header h1 {
+        color: seashell;
+        font-size: xx-large;
+        margin-left: 1%;
+    }
+    #main-header {
+        text-align: center;
+        background-color: #808080c2;
+        color: snow;
+    }
+    a {
+        float: right;
+        margin-top: -1.5%;
+        text-decoration: none;
+        color: white;
+        margin-right: 6%;
+    }
+    h5 {
+        top: 0px;
+        height: 40px;
+        padding-top: 1%;
+    }
+    section {
+        padding-top: 4%;
+        margin-left: 44%;
+    }
+    .inputs {
+        background-color: gray;
+        width: 22.5%;
+        height: 31px;
+    }
+    button {
+        width: 22.5%;
+        height: 34px;
+        font-size: 11px;
+        margin-top: 14px;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    input#bookinfo {
+        height: 26px;
+        margin-bottom: 12px;
+    }
+    img#book-img {
+        margin-left: 45%;
+    }
+    #book-author{
+        top: 0px;
+        height: 30px;
+        padding-top: 1%;
+        font-size: 15px;
+        text-align: center;
+    }
+    #book-desc{
+        text-align: justify;
+        margin-left: 10%;
+    }
+    #book-title{
+        color: honeydew;
+        text-align: center;
+    }
+    .outer-box{
+        background-color: grey;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+    body {
+        background-color: #808080c2;
+        margin: 0px;
+    }
+    header {
+        background-color: rgba(0, 0, 0, 0.9);
+        margin: 0;
+        height: 50px;
+    }
+    header h1 {
+        color: seashell;
+        font-size: xx-large;
+        margin-left: 1%;
+
+    }
+    a {
+        float: right;
+        margin-top: -1.5%;
+        text-decoration: none;
+        color: white;
+        margin-right: 6%;
+    }
+    #main-header {
+        text-align: center;
+        background-color: #808080c2;
+        color: snow;
+    }
+    #book-author{
+        top: 0px;
+        height: 30px;
+        padding-top: 1%;
+        font-size: 15px;
+        text-align: center;
+    }
+    #book-desc{
+        text-align: justify;
+    }
+    #book-title{
+        color: honeydew;
+        text-align: center;
+    }
+    #search {
+        margin-top: 4%;
+        margin-left: 4%;
+        margin-bottom: 4%;
+        width: 90%;
+        height: 32px;
+    }
+    .inputs {
+        background-color: gray;
+        margin-left: 4%;
+        width: 90%;
+        height: 32px;
+    }
+    button {
+        margin-left: 4%;
+        width: 90%;
+        height: 32px;
+        font-size: 11px;
+        margin-top: 14px;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    .outer-box{
+        background-color: grey;
+        width: 90%;
+        margin-left: 5%;
+    }
+    input#bookinfo {
+        height: 26px;
+        margin-bottom: 12px;
+    }
+    img#book-img {
+        margin-left: 35%;
+        margin-top: 5%;
+    }
+}
