@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +10,46 @@
     <link rel="stylesheet" href="/styles/icouns.css">
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="stylesheet" href="/styles/index.css">
+
+
 </head>
+
 <body>
     <header>
         <h1>Best Book !</h1>
-        <nav class="top-nav" id="top-nav">
-            <a href="#" class="logo"><img src="" alt="Your Logo Here"></a>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <a href="/">Back </a>
+
+       
     </header>
-    <main></main>
+    <main>
+
+        <div id='main-header'>
+            <h5>Search by Title or Authers </h5>
+
+        </div>
+        <section>
+            <form action="/searches" method="post">
+                <input type="text" name="bookname" id="search" placeholder="Plz enter or Auther" id="bookinfo">
+                <div class="inputs">
+                    <label for="title">Title</label>
+                    <input type="radio" name="serchtype" value="title" id="">
+                </div>
+                <br>
+                <div class="inputs">
+                    <label for="author">Auther</label>
+                    <input type="radio" name="serchtype" value="author" id="">
+                </div>
+                </div id="search-btn">
+                <button>Search the google book API</button>
+                
+            </form>
+        </section>
+    </main>
+
     <footer></footer>
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

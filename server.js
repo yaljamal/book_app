@@ -10,36 +10,48 @@ const superagent = require('superagent');
 app.use(express.static('./public'));
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 
-app.get('/',(req,res)=>{
-res.render('pages/index');
+app.get('/', (req, res) => {
+    res.render('pages/index');
 })
+app.post('/searches', (req, res) => {
 
-// app.get('/list',(req,res)=>{
-//     let family = ['Atallah','Mesina','Ali','Eman'];
-//     res.render('listFamily',{data:family});
-// })
+    var url;
+    if (req.body.serchtype === 'title') {
+        url = `https://www.googleapis.com/books/v1/volumes?q=${req.body.bookname}&intitle=${req.body.bookname}`;
+        console.log('title Url :', url);
 
-// app.get('/books',(req,res)=>{
-//     // get books from google book api
-//     // .then
-//     // send the result data to render them by res.render
+    }
+    else if (req.body.serchtype === 'author') {
+        url = `https://www.googleapis.com/books/v1/volumes?q=${req.body.bookname}+inauthor:${req.body.bookname}`
+        console.log('auther Url :', url);
 
-//     let url =`https://www.googleapis.com/books/v1/volumes?q=cats`;
-//     superagent.get(url)
-//     .then(data => {
-//         // res.json(data.body);
-//         res.render('booksPage',{book:data.body.items})
-//     })
-// })
+    }
+    superagent.get(url)
+        .then(data => {
+            let items = data.body.items;
+            let books = items.map(book => {
+                return new Book(book);
+            });
+            res.render('serches/show', { books: books })
+        });
 
-app.get('*',(req,res)=>{
+});
+function Book(book) {
+    this.title = book.volumeInfo.title;
+    this.smallThumbnail = book.volumeInfo.imageLinks.smallThumbnail;
+    this.authors = book.volumeInfo.authors;
+    this.description = book.volumeInfo.description;
+
+}
+
+app.get('*', (req, res) => {
     res.status(404).send('This route does not exist!!');
 })
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Listening on PORT ${PORT}`)
 })
