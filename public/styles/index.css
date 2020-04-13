@@ -6,6 +6,8 @@
     header {
         background-color: rgba(0, 0, 0, 0.9);
         margin: 0;
+        height: 70px;
+
     }
     header h1 {
         color: seashell;
@@ -19,7 +21,7 @@
     }
     a {
         float: right;
-        margin-top: -1.5%;
+        /* margin-top: -1.5%; */
         text-decoration: none;
         color: white;
         margin-right: 6%;
@@ -38,14 +40,37 @@
         width: 22.5%;
         height: 31px;
     }
+    .hide{
+        display: none;
+    }
+    #serchbtn{
+        width: 22.5%;
+        height: 34px;
+        font-size: 11px;
+        margin-top: 2%;
+        margin-left: 0;
+        background-color: black;
+        color: white;
+        border: none;
+        margin-bottom: 2%;
+    }
     button {
         width: 22.5%;
         height: 34px;
         font-size: 11px;
-        margin-top: 14px;
+        margin-top: 2%;
+        margin-left: 40%;
         background-color: black;
         color: white;
         border: none;
+        margin-bottom: 2%;
+        cursor: pointer;
+
+    }
+    #addBook{
+        margin-right: 115px;
+    font-size: larger;
+    cursor: pointer;
     }
     input#bookinfo {
         height: 26px;
@@ -92,9 +117,17 @@
         margin-left: 1%;
 
     }
+    .hide{
+        display: none;
+    }
+    #addBook{
+        margin-right: 39%;
+        font-size: larger;
+    cursor: pointer;
+    }
     a {
         float: right;
-        margin-top: -1.5%;
+        /* margin-top: -1.5%; */
         text-decoration: none;
         color: white;
         margin-right: 6%;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../layout/head.ejs')%>
+
+</head>
+
+<body>
+    <%- include ('../layout/header.ejs')%>
+    <main>
+
+        <div id='main-header'>
+            <h5>Search by Title or Authers </h5>
+
+        </div>
+        <section>
+            <form action="/searches" method="post">
+                <input type="text" name="bookname" id="search" placeholder="Plz enter or Auther" id="bookinfo" required>
+                <div class="inputs">
+                    <label for="title">Title</label>
+                    <input type="radio" name="serchtype" value="title" id="">
+                </div>
+                <br>
+                <div class="inputs">
+                    <label for="author">Auther</label>
+                    <input type="radio" name="serchtype" value="author" id="">
+                </div>
+                </div id="search-btn">
+                <button id="serchbtn">Search the google book API</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

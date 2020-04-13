@@ -2,38 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page </title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/icouns.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/modules.css">
-    <link rel="stylesheet" href="/styles/index.css">
+    <%- include ('../layout/head.ejs')%>
 </head>
 
 <body>
-    <header>
-        <h1>Best Book !</h1>
-        <a href="/">Back </a>
+    <%- include ('../layout/header.ejs')%>
+    <form action="/" method="get">
         <div>
-            <h3>Search By </h3>
-        </div>
-    </header>
-    <% books.forEach(val=>{%>
-    <div class="outer-box">
-        <div class="book-box">
-            <img src="<%=val.smallThumbnail%>" id="book-img">
+            <% books.forEach(val=>{%>
+            <div class="outer-box">
+                <div class="book-box">
+                    <img src="<%=val.smallThumbnail%>" id="book-img">
+                </div>
+                <h2 id="book-title"><%=val.title%></h2>
+                <h4 id="book-author"><%=val.author%></h4>
+                <p id="book-desc"><%=val.description%></p>
+            </div>
+            <form action="/books" method="post">
+                <input type="text" class="hide" name="title" value="<%=val.title%>">
+                <input type="text" class="hide" name="author" value="<%=val.author%>">
+                <input type="text" class="hide" name="isbn"  value="<%=val.isbn%>">
+                <input type="text" class="hide" name="image_url" value="<%=val.smallThumbnail%>">
+                <input type="text" class="hide" name="description" value="<%=val.description%>">
+                <button><a href="/books/book_id" id="addBook">Select this book</a></button>
+            </form>
+            <% }) %>
 
         </div>
-        <h2 id="book-title"><%=val.title%> </h2>
-        <h4 id="book-author"><%=val.authors%> </h4>
-        <p id="book-desc"><%= val.description %></p>
-    </div>
-
-    <% }) %>
-
+    </form>
 </body>
 
 </html>
