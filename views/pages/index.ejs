@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Serch</title>
+    <title>Book Search</title>
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/icouns.css">
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
     <link rel="stylesheet" href="/styles/index.css">
-
-
 </head>
-
 <body>
     <header>
         <h1>Best Book !</h1>
-        <a href="/">Back </a>
-
-       
+        <a href="/">Main Page </a>
+        <a href="/search">Serch in google api</a>
     </header>
     <main>
-
-        <div id='main-header'>
-            <h5>Search by Title or Authers </h5>
-
-        </div>
-        <section>
-            <form action="/searches" method="post">
-                <input type="text" name="bookname" id="search" placeholder="Plz enter or Auther" id="bookinfo">
-                <div class="inputs">
-                    <label for="title">Title</label>
-                    <input type="radio" name="serchtype" value="title" id="">
-                </div>
-                <br>
-                <div class="inputs">
-                    <label for="author">Auther</label>
-                    <input type="radio" name="serchtype" value="author" id="">
-                </div>
-                </div id="search-btn">
-                <button>Search the google book API</button>
-                
-            </form>
-        </section>
-    </main>
-
+        <h2>Saved Books</h2>
+        <p>Number Of Faverate Books :<%books.length%></p>
+            <% books.forEach(val=>{%>
+            <h3>Book Details</h3>
+            <img src="<val.image_url%>" alt="" srcset="">
+                <p>Title : <%val.title%></p>
+                <p>Author : <%val.author%></p>
+                <p>isbn : <%val.isbn %></p>
+                <a href="/books/<%=book.id%>">View more Details</a>
+            <%});%>
+        </main>
     <footer></footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="app.js"></script>
+    <script src=""></script>
 </body>
 
 </html>
