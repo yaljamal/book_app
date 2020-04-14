@@ -22,13 +22,15 @@ app.get('/', getBooks);
 app.get('/books/:book_id', getBookDetails);
 app.post('/books', insertBook);
 app.delete('/delete/:details_id', deleteBook);
-app.delete('/update/:details_id', updateBook);
-function updateBook(req,res){
-let {title, author, isbn, image_url, descriptions}=res.body;
-let SQL='UPDATE books SET title=$1,author=$2,isbn=$3,image_url=$4,descriptions=$5;';
-let saveValues=[title, author, isbn, image_url, descriptions];
-client.query(SQL,saveValues)
-.then(res.redirect('/'))
+app.put('/update/:details_id', updateBook);
+
+function updateBook(req, res) {
+    console.log(res.body);
+    let { title, author, isbn, image_url, descriptions} = req.body;
+    let SQL = 'UPDATE books SET title=$1,author=$2,isbn=$3,image_url=$4,descriptions=$5 WHERE id=$6;';
+    let saveValues = [title, author, isbn, image_url, descriptions,req.params.details_id];
+    client.query(SQL, saveValues)
+        .then(res.redirect('/'))
 }
 
 function deleteBook(req, res) {
@@ -84,9 +86,9 @@ function getBookDetails(req, res) {
         })
 }
 function insertBook(req, res) {
-    let { title, author, isbn, image_url, descriptions } = req.body;
+    let { author, title, isbn, image_url, descriptions } = req.body;
     let SQL = 'INSERT INTO books(author,title,isbn,img_url,descriptions) VALUES ($1,$2,$3,$4,$5);';
-    let saveValues = [title, author, isbn, image_url, descriptions];
+    let saveValues = [author, title, isbn, image_url, descriptions];
     return client.query(SQL, saveValues)
         .then(() => {
             res.redirect('/');

@@ -25,11 +25,12 @@
         <h5 id="serchh5">Search Result </h5>
     </div>
     <div>
+        <%=console.log(details)%>
         <img id="imagserch" src="<%=details.img_url%>" alt="" srcset="">
         <h5>Author : <%=details.author%></h5>
         <h2>Title : <%=details.title%></h2>
         <h3>Description : <%=details.descriptions%></h3>
-        <h3>Bookshelf :<%=details.bookshelf%></h3>
+        <h3 >Bookshelf :<%=details.bookshelf%></h3>
     </div>
     <div>
         <form action="/delete/<%=details.id%>?_method=delete" method="post">
@@ -37,21 +38,20 @@
         </form>
         <button id="update_btn">Update</button>
         <section id="formshow">
-            <form action="/update/<%details.id%>?_method=put" method="post">
-                <label for="">Title</label><br>
-                <input type="text" value="<%=details.title%>"><br>
-                <label for="">Author</label><br>
-                <input type="text" value="<%=details.author%>"><br>
-                <label for="">isbn</label><br>
-                <input type="text" value="<%=details.isbn%>"><br>
-                <label for="">Image URL</label><br>
-                <input type="text" value="<%=details.img_url%>"><br>
-                <label for="">description</label><br>
-                <input type="text" value="<%=details.descriptions%>"><br>
+            <form action="/update/<%=details.id%>?_method=put" method="post">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" value="<%=details.title%>"><br>
+                <label for="author">Author</label><br>
+                <input type="text" name="author" value="<%=details.author%>"><br>
+                <label for="isbn">isbn</label><br>
+                <input type="text" name="isbn" value="<%=details.isbn%>"><br>
+                <label for="img_url">Image URL</label><br>
+                <input type="text" name="img_url" value="<%=details.img_url%>"><br>
+                <label for="descriptions">description</label><br>
+                <input type="text" name="descriptions" value="<%=details.descriptions%>"><br>
                 <button type="submit">Update Book Info</button>
             </form>
         </section>
-
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
