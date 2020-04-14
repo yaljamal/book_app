@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Serch</title>
+        <link rel="stylesheet" href="/styles/reset.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/icouns.css">
+        <link rel="stylesheet" href="/styles/layout.css">
+        <link rel="stylesheet" href="/styles/modules.css">
+        <link rel="stylesheet" href="/styles/index.css">
+
+
+    </head>
+</head>
+
+<body>
+    <header>
+        <h1>Best Book !</h1>
+        <a href="/">Main Page </a>
+        <a href="/search">Serch in google api</a>
+    </header>
+        <div>
+            <% books.forEach(val=>{%>
+            <div class="outer-box">
+                <div class="book-box">
+                    <img src="<%=val.smallThumbnail%>" id="book-img">
+                </div>
+                <h2 id="book-title"><%=val.title%></h2>
+                <h4 id="book-author"><%=val.author%></h4>
+                <p id="book-desc"><%=val.descriptions%></p>
+            </div>
+            <form action="/books" method="POST">
+                <input type="text" class="hide" name="title" value="<%=val.title%>">
+                <input type="text" class="hide" name="author" value="<%=val.author%>">
+                <input type="text" class="hide" name="isbn" value="<%=val.isbn%>">
+                <input type="text" class="hide" name="image_url" value="<%=val.smallThumbnail%>">
+                <input type="text" class="hide" name="description" value="<%=val.descriptions%>">
+                <button>Select this book</button>
+            </form>
+            <% }) %>
+
+        </div>
+    
+</body>
+
+</html>

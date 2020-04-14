@@ -4,18 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Serch</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/icouns.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="stylesheet" href="/styles/index.css">
+
+
 </head>
 
 <body>
-    <%- include ('../layout/header.ejs')%>
+    <header>
+        <h1>Best Book !</h1>
+        <a href="/">Main Page </a>
+        <a href="/search">Serch in google api</a>
+    </header>
     <div>
-        <h5>Search Result </h5>
+        <h5 id="serchh5">Search Result </h5>
     </div>
     <div>
-        <h2><%=details.title%></h2>
-        <h5><%=details.author%></h5>
-        <p><%=details.isbn%></p>
+        <img id="imagserch" src="<%=details.img_url%>" alt="" srcset="">
+        <h5>Author : <%=details.author%></h5>
+        <h2>Title : <%=details.title%></h2>
+        <h3>Description : <%=details.descriptions%></h3>
+        <h3>Bookshelf :<%=details.bookshelf%></h3>
     </div>
 </body>
 
