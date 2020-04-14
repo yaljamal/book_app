@@ -67,7 +67,7 @@ function getBookDetails(req, res) {
         })
 }
 function insertBook(req, res) {
-    let {title, author, isbn, image_url, descriptions} = req.body;
+    let { title, author, isbn, image_url, descriptions } = req.body;
     let SQL = 'INSERT INTO books(author,title,isbn,img_url,descriptions) VALUES ($1,$2,$3,$4,$5);';
     let saveValues = [title, author, isbn, image_url, descriptions];
     return client.query(SQL, saveValues)
