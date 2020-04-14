@@ -4,6 +4,7 @@ const pg = require('pg');
 const express = require('express');
 const PORT = process.env.PORT || 3030;
 const app = express();
+const methodOverride = require('method-override');
 const superagent = require('superagent');
 
 app.use(express.static('./public'));
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 
 const client = new pg.Client(process.env.DATABASE_URL);
 
@@ -19,8 +21,23 @@ app.post('/searches', getData);
 app.get('/', getBooks);
 app.get('/books/:book_id', getBookDetails);
 app.post('/books', insertBook);
+app.delete('/delete/:details_id', deleteBook);
+app.delete('/update/:details_id', updateBook);
+function updateBook(req,res){
+let {title, author, isbn, image_url, descriptions}=res.body;
+let SQL='UPDATE books SET title=$1,author=$2,isbn=$3,image_url=$4,descriptions=$5;';
+let saveValues=[title, author, isbn, image_url, descriptions];
+client.query(SQL,saveValues)
+.then(res.redirect('/'))
+}
 
+function deleteBook(req, res) {
+    let SQL = 'DELETE FROM books WHERE id=$1;';
+    let value = [req.params.details_id];
+    client.query(SQL, value)
+        .then(res.redirect('/'));
 
+}
 function getBooks(req, res) {
     let SQL = 'SELECT * FROM books;';
     return client.query(SQL)

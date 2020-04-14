@@ -31,6 +31,37 @@
         <h3>Description : <%=details.descriptions%></h3>
         <h3>Bookshelf :<%=details.bookshelf%></h3>
     </div>
+    <div>
+        <form action="/delete/<%=details.id%>?_method=delete" method="post">
+            <button type="submit">Delete</button>
+        </form>
+        <button id="update_btn">Update</button>
+        <section id="formshow">
+            <form action="/update/<%details.id%>?_method=put" method="post">
+                <label for="">Title</label><br>
+                <input type="text" value="<%=details.title%>"><br>
+                <label for="">Author</label><br>
+                <input type="text" value="<%=details.author%>"><br>
+                <label for="">isbn</label><br>
+                <input type="text" value="<%=details.isbn%>"><br>
+                <label for="">Image URL</label><br>
+                <input type="text" value="<%=details.img_url%>"><br>
+                <label for="">description</label><br>
+                <input type="text" value="<%=details.descriptions%>"><br>
+                <button type="submit">Update Book Info</button>
+            </form>
+        </section>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $('document').ready(function () {
+            $("#formshow").hide();
+            $('#update_btn').on('click', function () {
+                $("#formshow").toggle();
+            })
+        });
+    </script>
 </body>
 
 </html>

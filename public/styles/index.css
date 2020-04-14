@@ -104,6 +104,11 @@
         width: 90%;
         margin-left: 5%;
     }
+    section#formshow {
+        /* text-align: center; */
+        width: 11%;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 400px) and (max-width: 767px) {
@@ -192,7 +197,11 @@ a {
     width: 90%;
     height: 32px;
 }
-
+section#formshow {
+    /* text-align: center; */
+    width: 50%;
+    margin: 0 auto;
+}
 button {
     margin-left: 4%;
     width: 90%;
