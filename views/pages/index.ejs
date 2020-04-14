@@ -18,20 +18,18 @@
         <a href="/search">Serch in google api</a>
     </header>
     <main>
-        <h2>Saved Books</h2>
-        <p>Number Of Faverate Books :<%books.length%></p>
+        <h2 id="headh2">Saved Books</h2>
+        <p id="headp" >Number Of Faverate Books :<%= books.length %> </p>
             <% books.forEach(val=>{%>
-            <h3>Book Details</h3>
-            <img src="<val.image_url%>" alt="" srcset="">
-                <p>Title : <%val.title%></p>
-                <p>Author : <%val.author%></p>
-                <p>isbn : <%val.isbn %></p>
-                <a href="/books/<%=book.id%>">View more Details</a>
+            <img src="<%=val.img_url%>" id="imgindex" alt="" srcset="">
+                <p>Title : <%= val.title %></p>
+                <p>Author : <%= val.author %></p>
+                <p>isbn : <%= val.isbn %></p>
+                <a id="viewDetails" href="/books/<%=val.id%>">View more Details</a>
             <%});%>
         </main>
-    <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src=""></script>
-</body>
 
+    <footer></footer>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+</body>
 </html>

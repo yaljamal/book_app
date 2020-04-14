@@ -7,13 +7,13 @@
         background-color: rgba(0, 0, 0, 0.9);
         margin: 0;
         height: 70px;
-
     }
     header h1 {
         color: seashell;
         font-size: xx-large;
         margin-left: 1%;
     }
+    #headh2 {}
     #main-header {
         text-align: center;
         background-color: #808080c2;
@@ -25,6 +25,12 @@
         text-decoration: none;
         color: white;
         margin-right: 6%;
+    }
+    #viewDetails {
+        float: right;
+        margin-top: -10%;
+        margin-right: 27%;
+        font-size: x-large;
     }
     h5 {
         top: 0px;
@@ -40,10 +46,10 @@
         width: 22.5%;
         height: 31px;
     }
-    .hide{
+    .hide {
         display: none;
     }
-    #serchbtn{
+    #serchbtn {
         width: 22.5%;
         height: 34px;
         font-size: 11px;
@@ -65,12 +71,11 @@
         border: none;
         margin-bottom: 2%;
         cursor: pointer;
-
     }
-    #addBook{
+    #addBook {
         margin-right: 115px;
-    font-size: larger;
-    cursor: pointer;
+        font-size: larger;
+        cursor: pointer;
     }
     input#bookinfo {
         height: 26px;
@@ -79,22 +84,22 @@
     img#book-img {
         margin-left: 45%;
     }
-    #book-author{
+    #book-author {
         top: 0px;
         height: 30px;
         padding-top: 1%;
         font-size: 15px;
         text-align: center;
     }
-    #book-desc{
+    #book-desc {
         text-align: justify;
         margin-left: 10%;
     }
-    #book-title{
+    #book-title {
         color: honeydew;
         text-align: center;
     }
-    .outer-box{
+    .outer-box {
         background-color: grey;
         width: 90%;
         margin-left: 5%;
@@ -115,76 +120,112 @@
         color: seashell;
         font-size: xx-large;
         margin-left: 1%;
-
     }
-    .hide{
+    #imgindex {
+        width: 50%;
+        margin-left: 25%;
+    }
+    #headh2 {
+        text-align: center;
+        font-size: larger;
+    }
+    #headp {
+        text-align: center;
+        font-size: larger;
+    }
+    .hide {
         display: none;
     }
-    #addBook{
+    #addBook {
         margin-right: 39%;
         font-size: larger;
-    cursor: pointer;
+        cursor: pointer;
     }
-    a {
-        float: right;
-        /* margin-top: -1.5%; */
-        text-decoration: none;
-        color: white;
-        margin-right: 6%;
-    }
-    #main-header {
-        text-align: center;
-        background-color: #808080c2;
-        color: snow;
-    }
-    #book-author{
-        top: 0px;
-        height: 30px;
-        padding-top: 1%;
-        font-size: 15px;
-        text-align: center;
-    }
-    #book-desc{
-        text-align: justify;
-    }
-    #book-title{
-        color: honeydew;
-        text-align: center;
-    }
-    #search {
-        margin-top: 4%;
-        margin-left: 4%;
-        margin-bottom: 4%;
-        width: 90%;
-        height: 32px;
-    }
-    .inputs {
-        background-color: gray;
-        margin-left: 4%;
-        width: 90%;
-        height: 32px;
-    }
-    button {
-        margin-left: 4%;
-        width: 90%;
-        height: 32px;
-        font-size: 11px;
-        margin-top: 14px;
-        background-color: black;
-        color: white;
-        border: none;
-    }
-    .outer-box{
-        background-color: grey;
-        width: 90%;
-        margin-left: 5%;
-    }
-    input#bookinfo {
-        height: 26px;
-        margin-bottom: 12px;
-    }
-    img#book-img {
-        margin-left: 35%;
+    #viewDetails {
+        margin-right: 38%;
+        margin-bottom: 5%;
         margin-top: 5%;
     }
+    
+a {
+    float: right;
+    /* margin-top: -1.5%; */
+    text-decoration: none;
+    color: white;
+    margin-right: 6%;
 }
+
+#main-header {
+    text-align: center;
+    background-color: #808080c2;
+    color: snow;
+}
+
+#book-author {
+    top: 0px;
+    height: 30px;
+    padding-top: 1%;
+    font-size: 15px;
+    text-align: center;
+}
+
+#book-desc {
+    text-align: justify;
+}
+
+#book-title {
+    color: honeydew;
+    text-align: center;
+}
+
+#search {
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    width: 90%;
+    height: 32px;
+}
+
+.inputs {
+    background-color: gray;
+    margin-left: 4%;
+    width: 90%;
+    height: 32px;
+}
+
+button {
+    margin-left: 4%;
+    width: 90%;
+    height: 32px;
+    font-size: 11px;
+    margin-top: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+#imagserch{
+    width: 45%;
+    margin-left: 27%;
+}
+#serchh5{
+    text-align: center;
+
+}
+.outer-box {
+    background-color: grey;
+    width: 90%;
+    margin-left: 5%;
+}
+
+input#bookinfo {
+    height: 26px;
+    margin-bottom: 12px;
+}
+
+img#book-img {
+    margin-left: 35%;
+    margin-top: 5%;
+}
+}
+
+
